@@ -1,0 +1,120 @@
+:root {
+  --body-color: #e4e9f7;
+  --nav-color: #4070f4;
+  --side-nav: #010718;
+  --text-color: #ffffff;
+  --search-bar: #f2f2f2;
+  --search-text: #010718;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--body-color);
+  height: 100vh;
+  overflow: hidden;
+}
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--nav-color);
+  height: 70px;
+  width: 100%;
+}
+.nav-bar {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  max-width: 1000px;
+  background-color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 30px;
+}
+.nav-bar .logo a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+.nav-links li {
+  list-style-type: none;
+  margin: 0 5px;
+}
+.nav-links li a {
+  text-decoration: none;
+  font-size: 17px;
+  position: relative;
+  color: var(--text-color);
+  padding: 10px;
+  font-weight: 400;
+}
+.nav-links li a::before {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  content: "";
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
+  background-color: var(--text-color);
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.nav-links li:hover a::before {
+  opacity: 1;
+}
+
+.nav-bar .darkLight-searchBox {
+  display: flex;
+  align-items: center;
+}
+.darkLight-searchBox .dark-light,
+.darkLight-searchBox .searchBox {
+  /* background-color:red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+}
+.dark-light i,
+.searchBox i {
+  position: absolute;
+  color: var(--text-color);
+  cursor: pointer;
+  font-size: 22px;
+}
+.dark-light i.sun {
+  opacity: 0;
+  pointer-events: none;
+}
+/* .dark-light i.moon{
+  opacity:0;
+} */
+.dark-light.active i.sun {
+  opacity: 1;
+  pointer-events: auto;
+}
+.dark-light.active i.moon {
+  opacity: 1;
+  pointer-events: auto;
+}
+.searchBox i.cancel {
+  opacity: 0;
+  pointer-events: none;
+}
