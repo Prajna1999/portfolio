@@ -1,4 +1,4 @@
-import "./styles.css";
+
 //Selectors
 
 const body = document.querySelector("body");
@@ -8,5 +8,12 @@ const searchToggle = document.querySelector(".searchBox");
 
 //Event Listeners
 modeToggle.addEventListener("click", () => {
-  modeToggle.classList.add("active");
+  modeToggle.classList.toggle("active");
+  body.classList.toggle('dark')
 });
+
+// toggle search and cancle.
+searchToggle.addEventListener('click', ()=>{
+  searchToggle.classList.toggle('active');
+  
+})
