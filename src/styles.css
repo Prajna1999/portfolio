@@ -107,6 +107,11 @@ nav {
   cursor: pointer;
   font-size: 22px;
   transition: all 0.3s ease;
+  
+}
+.searchBox i{
+  bottom: 8px;
+  right: 5px;
 }
 .dark-light i.sun {
   opacity: 0;
@@ -120,17 +125,96 @@ nav {
   opacity:0;
   pointer-events: auto;
 }
-.searchBox i.cancel {
+.searchToggle i.cancel {
   opacity: 0;
   pointer-events: none;
 }
 
-.searchBox.active i.cancel{
+.searchToggle.active i.cancel{
   opacity: 1;
   pointer-events: auto;
 }
 
-.searchBox.active i.search{
+.searchToggle.active i.search{
   opacity: 0;
   pointer-events: auto;
+}
+
+.searchBox{
+  position: relative;
+}
+.searchBox .search-field {
+  position: absolute;
+  bottom: -85px;
+  right: 5px;
+  height: 50px;
+  width: 300px;
+  background-color:var(--nav-color);
+  display: flex;
+  align-items: center;
+  border-radius: 6px;
+  padding: 3px;
+  opacity: 0;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.1);
+  pointer-events: none;
+  transition: all 0.3s ease;
+ 
+ 
+  
+ 
+  /* justify-content: center; */
+}
+.searchToggle.active ~ .search-field{
+  opacity: 1;
+  pointer-events: auto;
+  bottom: -75px;
+  right: -0.2rem;
+}
+.search-field::before{
+  content: '';
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  right: 14px;
+  top: -4px;
+  background-color: var(--nav-color);
+  transform: rotate(-45deg);
+  z-index: -1;
+}
+.search-field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding: 0 45px 0 15px;
+  border: none;
+  color: var(--search-text);
+  font-size: 14px;
+  font-weight: 400;
+  border-radius: 5px;
+  
+ 
+
+}
+.search-field i{
+  position: absolute;
+  right: 15px; 
+  color: var(--nav-color);
+  font-size: 22px;
+  cursor: pointer;
+  bottom: 12px;
+}
+
+/* Responsoveness for small screen devices */
+@media (max-width:790px){
+  .menu{
+    position: fixed;
+    height: 100%;
+    width: 320px;
+    left: 0;
+    top: 0;
+    background-color: var(--side-nav);
+  }
+  .nav-bar .nav-links{
+    flex-direction: column;
+  }
 }
