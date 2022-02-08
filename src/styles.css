@@ -90,6 +90,13 @@ nav {
   display: flex;
   align-items: center;
 }
+.sidebarOpen{
+  color: var(--text-color);
+  font-size: 25px;
+  padding: 5px;
+  cursor: pointer;
+  display: none;
+}
 .darkLight-searchBox .dark-light,
 .darkLight-searchBox .searchBox {
   /* background-color:red; */
@@ -138,6 +145,9 @@ nav {
 .searchToggle.active i.search{
   opacity: 0;
   pointer-events: auto;
+}
+.menu .logo-toggle{
+
 }
 
 .searchBox{
@@ -206,6 +216,9 @@ nav {
 
 /* Responsoveness for small screen devices */
 @media (max-width:790px){
+  .sidebarOpen{
+    display: block;
+  }
   .menu{
     position: fixed;
     height: 100%;
@@ -213,8 +226,28 @@ nav {
     left: 0;
     top: 0;
     background-color: var(--side-nav);
+    padding: 20px;
+
+  }
+  .menu .logo-toggle{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+  }
+  .logo-toggle .siderbarClose{
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
   }
   .nav-bar .nav-links{
     flex-direction: column;
+    padding-top: 30px;
   }
+  .nav-links li a{
+    padding-top: 20px;
+    display: block;
+  }
+
 }
